@@ -1,0 +1,23 @@
+<div class="container">
+    <div class="row">
+        <div class="col-md-10 col-md-offset-1">
+            <div class="panel panel-default">
+                <div class="panel-heading">Tasks</div>
+                <div class="panel-body">
+                    <div ng-repeat="task in tasks">
+                        <h4>
+                            <a ui-sref="app.task-show({id: task._id})" ng-class="{'disabled-task': !task.active}">{{task.title}}</a>
+                            <button class="btn-link btn-right" ng-click="delete(task)"><i
+                                    class="glyphicon glyphicon-trash"></i></button>
+                        </h4>
+                        <p>{{task.body}}</p>
+                    </div>
+                    <div ng-if="!tasks.length">
+                        <h4>You have no tasks</h4>
+                    </div>
+                </div>
+            </div>
+            <a ui-sref="app.task-add">Create new task</a>
+        </div>
+    </div>
+</div>

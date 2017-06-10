@@ -1,0 +1,52 @@
+<div class="container">
+    <div class="row">
+        <div class="col-md-10 col-md-offset-1">
+            <div class="panel panel-default">
+                <div class="panel-heading">{{action}} task</div>
+                <div class="panel-body">
+                    <div class="row form-group">
+                        <label class="control-label col-sm-2" for="title">Title</label>
+                        <div class="col-sm-10">
+                            <input class="form-control" type="text" id="title" ng-model="task.title">
+                        </div>
+                    </div>
+                    <div class="row" ng-if="errors.title">
+                        <div class="col-sm-offset-2 col-sm-10">
+                            <div class="alert alert-danger">
+                                <strong>Danger!</strong> {{errors.title}}
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row form-group">
+                        <label class="control-label col-sm-2" for="body">Body</label>
+                        <div class="col-sm-10">
+                            <textarea class="form-control vertical-resize" rows="3" id="body"
+                                      ng-model="task.body"></textarea>
+                        </div>
+                    </div>
+                    <div class="row" ng-if="errors.body">
+                        <div class="col-sm-offset-2 col-sm-10">
+                            <div class="alert alert-danger">
+                                <strong>Danger!</strong> {{errors.body}}
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row form-group">
+                        <div class="col-sm-offset-2 col-sm-6">
+                            <div class="checkbox">
+                                <label><input type="checkbox" value="1" name="active"
+                                              ng-model="task.active">Active</label>
+                            </div>
+                        </div>
+                        <div class="col-sm-2">
+                            <button class="btn btn-default btn-wide" ng-click="save(task)">Save</button>
+                        </div>
+                        <div class="col-sm-2">
+                            <a class="btn btn-danger btn-wide" ui-sref="app.task-list">Cancel</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
