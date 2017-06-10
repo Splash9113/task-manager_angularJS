@@ -1,3 +1,3 @@
-npm i
-webpack
-webpack-dev-server
+npm i<br>
+webpack<br>
+webpack-dev-server<br>
